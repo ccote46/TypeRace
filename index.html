@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Typing Race</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="title">TypeRace</h1>
+        <p id="intro">Welcome to TypeRace! Test out your typing speed with 3 levels of difficulty.</p>
+
+        <div id="difficultyHolder">
+            <button id="easy">Easy</button>
+            <button id="medium">Medium</button>
+            <button id="hard">Hard</button>
+        </div>
+
+        <button id="startButton">Start</button>
+
+
+        <div class="signs">        
+            <img id="stopLight">
+        </div>
+
+
+        <div class="stopwatch">
+            <h1 id="displayTime">00:00:00</h1>            
+        </div>
+
+        <div class="inputHolder">
+            <input type="text" autocomplete="off" id="input" minlength="4" size="50" />
+        </div>
+
+        <div id="testrandom">Click the button to start!</div>
+
+        <div id="resultsHolder">
+            <h2>Results</h2>
+            <p id="finalWPM"></p>
+            <p id="finalTime"></p>
+            <p id="accuracy"></p>
+
+            <button id="playAgain">Play again?</button>
+        </div>
+    </div>
+</body>
+</html>

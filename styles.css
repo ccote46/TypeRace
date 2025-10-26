@@ -1,0 +1,357 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-grey: linear-gradient(180deg, white, #808080);
+    --racing-red: #f34025;
+    --racing-yellow: #faf742;
+    --racing-green: #50fb7d;
+    --racing-dark: #1a1a1a;
+    --racing-silver: #b8b8b8;
+    --text-dark: #242424;
+    --text-light: #f9f9f9;
+}
+
+
+@font-face {
+    font-family: racer;
+    src: url("/misc/SprinturaDemo.otf");
+}
+
+/* Body */
+body {
+    font-family: racer;
+    background-image: url("https://media.istockphoto.com/id/2095591536/vector/flag-black-background-racing.jpg?s=612x612&w=0&k=20&c=YEQEDAzaaoG6lajZR9jYuoMb4KUYRw0NnYokKYqUrVI=");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    background: var(--bg-grey);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+}
+
+/* Title and Intro */
+#title {
+    font-size: 3rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px var(--racing-red);
+}
+
+#intro {
+    text-align: center;
+    color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Start Button */
+#startButton {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--racing-red) 0%, var(--racing-yellow) 50%, var(--racing-green) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(243, 64, 37, 0.5);
+    transition: all 0.3s ease;
+}
+
+#startButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(243, 64, 37, 0.6);
+}
+
+#startButton:active {
+    transform: translateY(0);
+}
+
+/* Difficulty Buttons */
+#difficultyHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#difficultyHolder button {
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    color: var(--text-dark);
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#easy {
+    background: linear-gradient(135deg, #57ff9b, #1cc065);
+}
+
+#medium {
+    background: linear-gradient(135deg, #faff7d, #d4ca2b);
+}
+
+#hard {
+    background: linear-gradient(135deg, #ff705e, #b32b1d);
+}
+
+/*when selected*/
+#easy.active-diff {
+    background: linear-gradient(135deg, #3ebd72, #148b4d);
+    color: white;
+}
+
+#medium.active-diff {
+    background: linear-gradient(135deg, #d4d329, #a69d00);
+    color: white;
+}
+
+#hard.active-diff {
+    background: linear-gradient(135deg, #c93d2d, #801b12);
+    color: white;
+}
+
+#difficultyHolder button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
+#difficultyHolder button:active {
+    transform: translateY(0);
+}
+
+/* Traffic Light */
+.signs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+#stopLight {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+#stopLight.active {
+    transform: scale(1.1);
+}
+
+/* Input Field */
+.inputHolder {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+#input {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 3px solid #e0e0e0;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+}
+
+#input:focus {
+    border-color: var(--racing-red);
+    box-shadow: 0 0 10px var(--racing-yellow);
+}
+
+/* Test Text Display */
+#testrandom {
+    background: white;
+    border-radius: 15px;
+    font-family:'Courier New', Courier, monospace;
+    padding: 25px;
+    margin: 25px 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    color: #333;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    user-select: none; /*people can't copy/paste*/
+}
+
+/* Stopwatch */
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--racing-dark);
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin: 10px auto 20px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: fit-content; 
+}
+
+#displayTime {
+    font-size: 2.5rem;
+    color: var(--racing-green);
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px var(--racing-green);
+}
+
+
+/* Output Text */
+#output {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    min-height: 30px;
+    margin: 20px 0;
+}
+
+/* Results Display */
+#resultsHolder {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, var(--racing-red) 0%, var(--racing-dark) 100%);
+    color: var(--text-light);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+#resultsHolder h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#resultsHolder p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-weight: 500;
+}
+
+/* Animation for correct typing */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.correct-animation {
+    animation: pulse 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    #title {
+        font-size: 2.2rem;
+    }
+
+    #intro {
+        font-size: 1rem;
+    }
+
+    #difficultyHolder {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #difficultyHolder button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    #testrandom {
+        background: white;
+        border-radius: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 25px;
+        margin: 25px 0;
+        font-size: 1.1rem; /* ⬅️ slightly smaller */
+        line-height: 1.7;
+        text-align: center;
+        color: #333;
+        min-height: 100px;
+        max-width: 700px; /* ⬅️ added a max width */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-left: auto;
+        margin-right: auto; /* ⬅️ centers the box */
+    }
+    
+
+    #displayTime {
+        font-size: 2rem;
+    }
+}
+
+
+
+#playAgain {
+    display: block;
+    margin: 25px auto 0;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--racing-green), var(--racing-yellow));
+    color: var(--text-dark);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(80, 251, 125, 0.4);
+    transition: all 0.3s ease;
+}
+
+#playAgain:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(80, 251, 125, 0.6);
+    color: white;
+}
